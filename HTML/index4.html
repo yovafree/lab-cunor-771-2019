@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="jumbotron col-md-12"><h1>Conversor de Base</h1></div>
+				<div class="col-md-5">
+					Texto de Entrada<br>
+					<textarea class="form-control" id="txtEntrada"></textarea>
+				</div>
+				<div class="col-md-2">
+					<select id="tipoConversion" class="form-control">
+						<option value="1">Decimal a Binario</option>
+						<option value="2">Binario a Decimal</option>
+						<option value="3">Binario a Hexadecimal</option>
+						<option value="4">Hexadecimal a Binario</option>
+						<option value="5">Texto a Binario</option>
+						<option value="6">Binario a Texto</option>
+					</select><br><br><br>
+					<button class="btn btn-primary" id="btnConvertir">Convertir</button>
+				</div>
+				<div class="col-md-5">
+					Texto de Salida<br>
+					<textarea class="form-control" id="txtSalida"></textarea>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			$("#btnConvertir").click(function(){
+				entrada = $("#txtEntrada").val();
+				opcion = $("#tipoConversion").val();
+				
+				//Conversión Dec a Bin
+				if (opcion == 1){
+					salida = DecBin(entrada);
+					$("#txtSalida").val(salida);
+				}else if (opcion == 2){
+				console.log("aqui");
+					salida = BinDec(entrada);
+					$("#txtSalida").val(salida);
+				}
+				
+			});
+			
+			function DecBin(texto){
+				numero = parseInt(texto);
+				return (+numero).toString(2);
+			}
+			
+			function BinDec(texto){
+				return parseInt(texto, 2);
+			}
+		</script>
+
+	</body>
+</html>

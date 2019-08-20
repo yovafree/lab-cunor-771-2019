@@ -1,0 +1,22 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<p id="resultado"></p>
+
+		<script>
+			tabla = "";
+			for(x=1;x<=10;x++){
+				for(y=1;y<=10;y++){
+					tabla = tabla + x + " * " + y + " = " + (x*y) + "<br>";
+				}
+				tabla = tabla + "<br>";
+			}
+			
+			document.getElementById("resultado").innerHTML = tabla;
+			
+			
+		</script>
+
+	</body>
+</html>

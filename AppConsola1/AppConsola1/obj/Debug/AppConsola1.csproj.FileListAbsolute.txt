@@ -1,0 +1,7 @@
+C:\Users\erwin\Geovani\Trabajos\CUNOR\Repositorios\LAB_771_2019_IPC2\AppConsola1\AppConsola1\bin\Debug\AppConsola1.exe.config
+C:\Users\erwin\Geovani\Trabajos\CUNOR\Repositorios\LAB_771_2019_IPC2\AppConsola1\AppConsola1\bin\Debug\AppConsola1.exe
+C:\Users\erwin\Geovani\Trabajos\CUNOR\Repositorios\LAB_771_2019_IPC2\AppConsola1\AppConsola1\bin\Debug\AppConsola1.pdb
+C:\Users\erwin\Geovani\Trabajos\CUNOR\Repositorios\LAB_771_2019_IPC2\AppConsola1\AppConsola1\obj\Debug\AppConsola1.csprojAssemblyReference.cache
+C:\Users\erwin\Geovani\Trabajos\CUNOR\Repositorios\LAB_771_2019_IPC2\AppConsola1\AppConsola1\obj\Debug\AppConsola1.csproj.CoreCompileInputs.cache
+C:\Users\erwin\Geovani\Trabajos\CUNOR\Repositorios\LAB_771_2019_IPC2\AppConsola1\AppConsola1\obj\Debug\AppConsola1.exe
+C:\Users\erwin\Geovani\Trabajos\CUNOR\Repositorios\LAB_771_2019_IPC2\AppConsola1\AppConsola1\obj\Debug\AppConsola1.pdb

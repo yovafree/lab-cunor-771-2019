@@ -1,0 +1,53 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<p id="demo">HOLA IPC2</p>
+		<p id="demo2">HOLA IPC2</p>
+
+		<script>
+			var num1 = 9;
+			var num2 = 5;
+			resu = num1+num2;
+			
+			// Estructuras de control de flujo
+			resu2 = "";
+			if (num1 > num2){
+				resu2 = "El mayor es " + num1;
+			}else{
+				resu2 = "El mayor es " + num2;
+			}
+			
+			// Estructuras repetitivas.
+			
+			for(x=1;x<=10;x++){
+				for(y=1;y<=10;y++){
+					console.log(x + "*" + y + "=" + (x*y));
+				}
+			}
+			
+			x = 0;
+			while(x < 10){
+				console.log("Valor while ->" + x);
+				x++;
+			}
+			
+			x = 0;
+			do{
+				console.log("Valor do while ->" + x);
+				x++;
+			}while(x < 10);
+			
+			console.log(hola());
+			
+			
+			function hola(){
+				return "Hola IPC 2 - 2019";
+			}
+			
+			document.getElementById("demo").innerHTML = "El resultado es: " + resu;
+			document.getElementById("demo2").innerHTML = resu2;
+		</script>
+
+	</body>
+</html>

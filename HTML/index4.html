@@ -21,6 +21,8 @@
 						<option value="4">Hexadecimal a Binario</option>
 						<option value="5">Texto a Binario</option>
 						<option value="6">Binario a Texto</option>
+						<option value="7">Cifrar texto</option>
+						<option value="8">Descifrar texto</option>
 					</select><br><br><br>
 					<button class="btn btn-primary" id="btnConvertir">Convertir</button>
 				</div>
@@ -44,6 +46,24 @@
 				console.log("aqui");
 					salida = BinDec(entrada);
 					$("#txtSalida").val(salida);
+				}else if(opcion == 5){
+					salida = "";
+					for(var n=0; n<entrada.length;n++){
+						salida = salida + DecBin(""+entrada[n].charCodeAt(0)) + " ";
+					}
+					$("#txtSalida").val(salida);
+				}else if(opcion == 7){
+					salida = "";
+					for(var n=0; n<entrada.length;n++){
+						salida = salida + cifrar(entrada[n].charCodeAt(0));
+					}
+					$("#txtSalida").val(salida);
+				}else if(opcion == 8){
+					salida = "";
+					for(var n=0; n<entrada.length;n++){
+						salida = salida + descifrar(entrada[n].charCodeAt(0));
+					}
+					$("#txtSalida").val(salida);
 				}
 				
 			});
@@ -55,6 +75,16 @@
 			
 			function BinDec(texto){
 				return parseInt(texto, 2);
+			}
+
+			function cifrar(dec){
+				dec = dec-2;
+				return String.fromCharCode(dec);
+			}
+
+			function descifrar(dec){
+				dec = dec+2;
+				return String.fromCharCode(dec);
 			}
 		</script>
 

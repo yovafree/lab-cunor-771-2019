@@ -1,0 +1,144 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<style>
+			.cl_0{
+				height: 80px;
+				width: 80px;
+				background-color: #6e6e6e;
+				border: 1px solid #000;
+			}
+			.cl_1{
+				height: 80px;
+				width: 80px;
+				background-color: #fff;
+				border: 1px solid #000;
+			}
+
+			#tblTablero tr td {
+				text-align: center;
+			}
+
+			#tblTablero tr td img{
+				max-height: 70px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12"><h1>AJEDREZ</h1></div>
+				<table id="tblTablero">
+				</table>
+			</div>
+		</div>
+
+		<script>
+			var mat = {
+				0:[11,12,13,14,15,13,12,11],
+				1:[16,16,16,16,16,16,16,16],
+				2:[0,0,0,0,0,0,0,0],
+				3:[0,0,0,0,0,0,0,0],
+				4:[0,0,0,0,0,0,0,0],
+				5:[0,0,0,0,0,0,0,0],
+				6:[26,26,26,26,26,26,26,26],
+				7:[21,22,23,25,24,23,22,21]
+			};
+
+			function dibujarTablero(){
+				cont = "";
+				cnt = 0;
+
+				for(var y = 0;y<8;y++){
+					cont += "<tr>";
+					for(var x = 0;x<8;x++){
+						if (cnt == 0){
+							cont += "<td class='cl_0' id='pos"+y+"_"+x+"' onclick='clickElemento("+y+","+x+")'></td>";
+							cnt = 1;
+						}else{
+							cont += "<td class='cl_1' id='pos"+y+"_"+x+"' onclick='clickElemento("+y+","+x+")'></td>";
+							cnt = 0;
+						}
+					}
+					if (cnt == 0){
+						cnt = 1;
+					}else{
+						cnt = 0;
+					}
+					cont += "</tr>";
+				}
+				$("#tblTablero").html(cont);
+			}
+
+			function inicializar(){
+				for(y=0;y<8;y++){
+					for(x=0;x<8;x++){
+						if (mat[y][x] != 0){
+							imagen = "";
+							if (mat[y][x] == 11){
+								imagen = "<img src='assets/blanco_torre.png'>";
+							}else if(mat[y][x] == 12){
+								imagen = "<img src='assets/blanco_caballo.png'>";
+							}else if(mat[y][x] == 13){
+								imagen = "<img src='assets/blanco_alfil.png'>";
+							}else if(mat[y][x] == 14){
+								imagen = "<img src='assets/blanco_reina.png'>";
+							}else if(mat[y][x] == 15){
+								imagen = "<img src='assets/blanco_rey.png'>";
+							}else if(mat[y][x] == 16){
+								imagen = "<img src='assets/blanco_peon.png'>";
+							}else if(mat[y][x] == 21){
+								imagen = "<img src='assets/negro_torre.png'>";
+							}else if(mat[y][x] == 22){
+								imagen = "<img src='assets/negro_caballo.png'>";
+							}else if(mat[y][x] == 23){
+								imagen = "<img src='assets/negro_alfil.png'>";
+							}else if(mat[y][x] == 24){
+								imagen = "<img src='assets/negro_reina.png'>";
+							}else if(mat[y][x] == 25){
+								imagen = "<img src='assets/negro_rey.png'>";
+							}else if(mat[y][x] == 26){
+								imagen = "<img src='assets/negro_peon.png'>";
+							}
+
+							$("#pos"+y+"_"+x).html(imagen);
+						}else{
+							$("#pos"+y+"_"+x).html("");
+						}
+						
+					}	
+				}
+			}
+			
+			var tipoAnt = 0;
+			var posXAnt = 0;
+			var posYAnt = 0;
+			var tmpTipo = 0;
+			function clickElemento(y,x){
+				if (tipoAnt != 0){
+					tmpTipo = mat[y][x];
+					mat[y][x] = tipoAnt;
+					mat[posYAnt][posXAnt] = tmpTipo;
+
+					tipoAnt = 0;
+					posXAnt = 0;
+					posYAnt = 0;
+
+					inicializar();
+				}else{
+					tipoAnt = mat[y][x];
+					posXAnt = x;
+					posYAnt = y;
+				}
+				console.log(x + " " + y);
+			}
+
+			dibujarTablero();
+			inicializar();
+		</script>
+
+	</body>
+</html>

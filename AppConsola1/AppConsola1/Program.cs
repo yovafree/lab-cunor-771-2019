@@ -19,8 +19,6 @@ namespace AppConsola1
 
             Console.WriteLine(num1 + num2);
             Console.ReadKey();
-
-            Console.read
         }
     }
 }

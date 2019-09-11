@@ -113,17 +113,17 @@
 				}
 			}
 			
-			var tipoAnt = 0;
+			var tipoAnt = -1;
 			var posXAnt = 0;
 			var posYAnt = 0;
 			var tmpTipo = 0;
 			function clickElemento(y,x){
-				if (tipoAnt != 0){
+				if (tipoAnt != -1){
 					tmpTipo = mat[y][x];
 					mat[y][x] = tipoAnt;
 					mat[posYAnt][posXAnt] = tmpTipo;
 
-					tipoAnt = 0;
+					tipoAnt = -1;
 					posXAnt = 0;
 					posYAnt = 0;
 

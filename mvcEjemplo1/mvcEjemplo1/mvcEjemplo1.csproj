@@ -127,12 +127,25 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TableroController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\assets\blanco_alfil.png" />
+    <Content Include="Content\assets\blanco_caballo.png" />
+    <Content Include="Content\assets\blanco_peon.png" />
+    <Content Include="Content\assets\blanco_reina.png" />
+    <Content Include="Content\assets\blanco_rey.png" />
+    <Content Include="Content\assets\blanco_torre.png" />
+    <Content Include="Content\assets\negro_alfil.png" />
+    <Content Include="Content\assets\negro_caballo.png" />
+    <Content Include="Content\assets\negro_peon.png" />
+    <Content Include="Content\assets\negro_reina.png" />
+    <Content Include="Content\assets\negro_rey.png" />
+    <Content Include="Content\assets\negro_torre.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -169,6 +182,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Hola.cshtml" />
+    <Content Include="Views\Tablero\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

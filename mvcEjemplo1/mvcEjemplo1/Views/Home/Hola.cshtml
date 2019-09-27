@@ -6,3 +6,21 @@
 
 <h2>Hola mundo IPC2</h2>
 
+@ViewBag.Message
+
+<ol>
+    @{
+        for (var x = 0; x < 10; x++)
+        {
+            <li>@ViewBag.lista[x]</li>
+        }
+    }
+</ol>
+
+<ol>
+    @{ 
+        foreach (var m in ViewBag.lista2) {
+            <li>@m</li>
+        }
+    }
+</ol>

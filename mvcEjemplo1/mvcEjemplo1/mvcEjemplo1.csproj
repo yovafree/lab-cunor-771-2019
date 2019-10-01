@@ -183,6 +183,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Hola.cshtml" />
     <Content Include="Views\Tablero\Index.cshtml" />
+    <Content Include="Views\Home\Formulario.cshtml" />
+    <Content Include="Views\Home\Formulario2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -47,5 +47,34 @@ namespace mvcEjemplo1.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Formulario() {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Formulario(int num1, int num2) {
+            ViewBag.suma = num1 + num2;
+            ViewBag.resta = num1 - num2;
+            ViewBag.multi = num1 * num2;
+            ViewBag.div = num1 / num2;
+
+
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult Formulario2() {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Formulario2(string palabra, int cantidad) {
+            ViewBag.palabra = palabra;
+            ViewBag.cantidad = cantidad;
+            return View();
+        }
     }
 }

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Formulario2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Formulario 2</h2>
+
+@using (@Html.BeginForm("Formulario2", "Home", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-4">
+            <label>Ingrese la palabra</label>
+            @Html.TextBox("palabra", null, new { type = "text", @class = "form-control" })
+        </div>
+
+        <div class="col-md-4">
+            <label>Ingrese la cantidad</label>
+            @Html.TextBox("cantidad", null, new { type = "number", @class = "form-control" })
+        </div>
+
+        <div class="col-md-12">
+            Resultado:<br />
+            @{ 
+                <ul>
+                    @for (int n = 0; n < ViewBag.cantidad; n++) {
+                        <li>@ViewBag.palabra</li>
+                    }
+                </ul>
+            }
+        </div>
+
+        <div class="col-md-12">
+            <br />
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
+    </div>
+
+}
+

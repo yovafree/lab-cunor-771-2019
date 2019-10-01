@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Formulario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Formulario</h2>
+
+@using (@Html.BeginForm("Formulario", "Home", FormMethod.Post))
+{
+<div class="row">
+    <div class="col-md-4">
+        <label>Ingrese el número 1</label>
+        @Html.TextBox("num1", null, new { type = "number", @class = "form-control" })
+    </div>
+
+    <div class="col-md-4">
+        <label>Ingrese el número 2</label>
+        @Html.TextBox("num2", null, new { type = "number", @class = "form-control" })
+    </div>
+
+    <div class="col-md-12">
+        Resultados:<br />
+        Suma: @ViewBag.suma <br />
+        Resta: @ViewBag.resta <br />
+        Multiplicación: @ViewBag.multi <br />
+        División: @ViewBag.div <br />
+    </div>
+
+    <div class="col-md-12">
+        <br />
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </div>
+</div>
+    
+}

@@ -136,6 +136,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonasController.cs" />
+    <Compile Include="Controllers\ProductosController.cs" />
     <Compile Include="Controllers\ProveedoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -156,6 +157,9 @@
       <DependentUpon>mdlEjemplo2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\persona.cs">
+      <DependentUpon>mdlEjemplo2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\producto.cs">
       <DependentUpon>mdlEjemplo2.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\proveedor.cs">
@@ -230,6 +234,9 @@
     <Content Include="Views\Proveedores\Details.cshtml" />
     <Content Include="Views\Proveedores\Edit.cshtml" />
     <Content Include="Views\Proveedores\Index.cshtml" />
+    <Content Include="Views\Productos\Index.cshtml" />
+    <Content Include="Views\Productos\Create.cshtml" />
+    <Content Include="Views\Productos\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

@@ -7,6 +7,7 @@
       <Diagram DiagramId="0d3c3a676e83461d9c565e9189689102" Name="Diagram1">
         <EntityTypeShape EntityType="mdlEjemplo2.persona" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="mdlEjemplo2.proveedor" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="mdlEjemplo2.producto" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

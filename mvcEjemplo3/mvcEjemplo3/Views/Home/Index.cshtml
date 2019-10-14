@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    
+
+    <button type="button" onclick="obtenerLista()" class="btn btn-primary">Obtener</button>
+
+    <table class="table table-bordered">
+        <tbody id="tbl">
+
+        </tbody>
+    </table>
+
+</div>
+
+<script>
+    function obtenerLista() {
+        $.ajax("/Home/ListaEstudiantes")
+            .done(function (datos) {
+                var contenido = "";
+                for (var x = 0; x < datos.length; x++) {
+                    contenido += "<tr>";
+                    contenido += "<td>" + datos[x] + "</td>";
+                    contenido += "<tr>";
+                }
+
+                $("#tbl").html(contenido);
+            });
+    }
+</script>

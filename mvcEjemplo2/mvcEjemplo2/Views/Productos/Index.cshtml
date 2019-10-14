@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Productos</h2>
+
+@Html.ActionLink("Nuevo Producto","Create",null,new { @class="btn btn-primary"})
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Descripción</th>
+            <th>Marca</th>
+            <th>Fecha Vencimiento</th>
+            <th>#</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.lstProductos) {
+        <tr>
+            <td>@item.cod_producto</td>
+            <td>@item.nombre</td>
+            <td>@item.precio_unitario</td>
+            <td>@item.cantidad</td>
+            <td>@item.descripcion</td>
+            <td>@item.marca</td>
+            <td>@item.fec_vencimiento</td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.cod_producto }, new { @class = "label label-success" })
+                        | @Html.ActionLink("Eliminar", "Delete", new { id = item.cod_producto }, new { @class = "label label-danger" })
+                    </td>
+        </tr>
+        }
+    </tbody>
+</table>

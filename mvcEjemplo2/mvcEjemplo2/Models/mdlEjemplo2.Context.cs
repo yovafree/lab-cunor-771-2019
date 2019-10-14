@@ -27,5 +27,6 @@ namespace mvcEjemplo2.Models
     
         public virtual DbSet<persona> persona { get; set; }
         public virtual DbSet<proveedor> proveedor { get; set; }
+        public virtual DbSet<producto> producto { get; set; }
     }
 }

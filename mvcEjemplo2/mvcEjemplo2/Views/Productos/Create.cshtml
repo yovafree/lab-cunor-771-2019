@@ -1,0 +1,44 @@
+﻿@model mvcEjemplo2.Models.producto
+@{
+    /**/
+
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nuevo Producto</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="col-md-4">
+        <label>Nombre</label>
+        @Html.TextBoxFor(model => model.nombre, new { @class = "form-control" })
+    </div>
+    <div class="col-md-4">
+        <label>Cantidad</label>
+        @Html.TextBoxFor(model => model.cantidad, new { @class = "form-control"
+        })
+    </div>
+    <div class="col-md-4">
+        <label>Descripción</label>
+        @Html.TextAreaFor(model => model.descripcion, new { @class = "form-control" })
+    </div>
+    <div class="col-md-4">
+        <label>Marca</label>
+        @Html.TextBoxFor(model => model.marca, new { @class = "form-control" })
+    </div>
+    <div class="col-md-4">
+        <label>Precio</label>
+        @Html.TextBoxFor(model => model.precio_unitario, new { @class = "form-control" })
+    </div>
+    <div class="col-md-4">
+        <label>Fecha</label>
+        @Html.TextBoxFor(model => model.fec_vencimiento, new { @class = "form-control", @type="date" })
+    </div>
+
+    <div class="col-md-12">
+        <br />
+        <button class="btn btn-primary" type="submit">Enviar</button>
+    </div>
+}
+

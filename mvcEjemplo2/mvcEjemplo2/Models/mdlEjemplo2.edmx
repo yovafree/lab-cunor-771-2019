@@ -15,6 +15,18 @@
           <Property Name="fec_nacimiento" Type="date" />
           <Property Name="dpi" Type="varchar" MaxLength="30" />
         </EntityType>
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="cod_producto" />
+          </Key>
+          <Property Name="cod_producto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="100" />
+          <Property Name="cantidad" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="descripcion" Type="varchar" MaxLength="200" />
+          <Property Name="marca" Type="varchar" MaxLength="100" />
+          <Property Name="precio_unitario" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="fec_vencimiento" Type="date" />
+        </EntityType>
         <EntityType Name="proveedor">
           <Key>
             <PropertyRef Name="cod_proveedor" />
@@ -25,6 +37,7 @@
         </EntityType>
         <EntityContainer Name="mdlEjemplo2StoreContainer">
           <EntitySet Name="persona" EntityType="Self.persona" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="producto" EntityType="Self.producto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="proveedor" EntityType="Self.proveedor" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -44,6 +57,7 @@
         <EntityContainer Name="ctxEjemplo2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="persona" EntityType="Self.persona" />
           <EntitySet Name="proveedor" EntityType="mdlEjemplo2.proveedor" />
+          <EntitySet Name="producto" EntityType="mdlEjemplo2.producto" />
         </EntityContainer>
         <EntityType Name="proveedor">
           <Key>
@@ -52,6 +66,18 @@
           <Property Name="cod_proveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nit" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="producto">
+          <Key>
+            <PropertyRef Name="cod_producto" />
+          </Key>
+          <Property Name="cod_producto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="cantidad" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="marca" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="precio_unitario" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="fec_vencimiento" Type="DateTime" Precision="0" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -76,6 +102,19 @@
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="nit" ColumnName="nit" />
                 <ScalarProperty Name="cod_proveedor" ColumnName="cod_proveedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="producto">
+            <EntityTypeMapping TypeName="mdlEjemplo2.producto">
+              <MappingFragment StoreEntitySet="producto">
+                <ScalarProperty Name="fec_vencimiento" ColumnName="fec_vencimiento" />
+                <ScalarProperty Name="precio_unitario" ColumnName="precio_unitario" />
+                <ScalarProperty Name="marca" ColumnName="marca" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="cod_producto" ColumnName="cod_producto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
